@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my persona</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body onload="startTime()">
+    <!-- Login Menu -->
+    <div class="window login">
+        <div class="title-bar">
+            <div class="title-bar-text">Welcome to Windows</div>
+            <div class="title-bar-controls">
+                <button aria-label="Help"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body login-window">
+            <div class="login-img">
+                <img src="resources/key_win_alt-2.png" alt="">
+            </div>
+        
+            <div class="login-input">
+                <p>Type a user name and password to log on to Windows.</p>
+                <div class="field-row">
+                    <label for="user"><u>U</u>ser name:</label>
+                    <input type="text" id="user" placeholder="vyx">
+                </div>
+                <div class="field-row">
+                    <label for="pass"><u>P</u>assword:</label>
+                    <input type="password" id="pass">
+                </div>
+            </div>
+        
+            <div class="login-buttons">
+                <button class="default" id="loginOK" onclick="easter_egg()">OK</button>
+                <button>Close</button>
+            </div>  
+        </div>
+    </div>
+
+    <div class="window" id="logging-win" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">Welcome to Windows</div>
+        </div>
+            <div class="window-body log-start">
+                <div  id="logging" style="padding: 15px; font-size:1.5em;">Welcome</div>
+                <div id="egg" style="padding: 0 15px 10px 15px;"></div>
+            </div>
+    </div>
+
+    <!-- taskbar -->
+    <div class="taskbar">
+        <button class="start"><img src="resources/windows-4.png" alt="">Start</button>
+        <div class="notif-area">
+            <div class="status-bar">
+                <div class="status-bar-field" style="width: 100%; padding: 3px;">
+                    <span style="padding: 4px;" id="clock"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Wordpad -->
+    <div class="window wordpad">
+        <div class="title-bar">
+            <div class="title-bar-text">my bio.doc - Wordpad</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="IE-menu-bar">
+                <span><u>F</u>ile</span>
+                <span><u>E</u>dit</span>
+                <span><u>V</u>iew</span>
+                <span><u>I</u>nsert</span>
+                <span>F<u>o</u>rmat</span>
+                <span><u>H</u>elp</span>
+            </div>
+            <div class="divider"></div>
+            <div class="toolbar1">
+                <span>
+                    <button><img src="resources/Windows 98 Wordpad Icons/new_document.png" alt=""></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/open_document.png" alt=""></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/save_document.png" alt=""></button>
+                </span>
+                <span>
+                    <button><img src="resources/Windows 98 Wordpad Icons/print_document.png" alt=""></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/print_preview.png" alt=""></button>
+                </span>
+                <span>
+                    <button><img src="resources/Windows 98 Wordpad Icons/find.png" alt=""></button>
+                </span>
+                <span>
+                    <button><img src="resources/Windows 98 Wordpad Icons/cut.png" alt=""></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/copy.png" alt=""></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/paste.png" alt=""></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/undo.png" alt="" style="height: 8px;"></button>
+                </span>
+                <span>
+                    <button><img src="resources/Windows 98 Wordpad Icons/insert_date&time.png" alt=""></button>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="toolbar2">
+                <span>
+                    <select style="width: 250px;">
+                        <option>Pixelated MS Sans Serif</option>
+                    </select>
+                </span>
+                <span>
+                    <select style="width: 45px;">
+                        <option>10</option>
+                    </select>
+                </span>
+                <span>
+                    <button><img src="resources/Windows 98 Wordpad Icons/bold.png" alt="" style="width: 10px; height:10px;"></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/italics.png" alt="" style="width: 10px; height:10px;"></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/underline.png" alt="" style></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/colour.png" alt="" style="width: 14px; height:14px;"></button>
+                </span>
+                <span>
+                    <button><img src="resources/Windows 98 Wordpad Icons/justify_left.png" alt=""></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/justify_centre.png" alt=""></button>
+                    <button><img src="resources/Windows 98 Wordpad Icons/justify_right.png" alt=""></button>
+                </span>
+                <span>
+                    <button><img src="resources/Windows 98 Wordpad Icons/add_bullet.png" alt=""></button>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="ruler">
+                    <span>1</span><span>2</span><span>3</span>
+            </div>
+            <div class="text-area">
+                <h4>hi there! welcome to my site.</h4>
+                <p>i'm vyx, an 18y/o person just surfing through the net. my most commons hobbies are programming & gaming.</p>
+                <p>i treat this website as a personal page and project of mine. it's still a very heavy WIP, but i plan on adding more things in the future.</p>
+                <p>hope you enjoy your stay!</p>
+            </div>
+            <div class="status-bar">
+                <span>For Help, press F1</span>
+                <div class="fields">
+                    <span class="status-bar-field"></span>
+                    <span class="status-bar-field"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internet Explorer -->
+    <div class="window IE">
+        <div class="title-bar">
+            <div class="title-bar-text">https://www.my-persona.net</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="toolbar">
+                <div class="IE-menu-bar">
+                    <span><u>F</u>ile</span>
+                    <span><u>E</u>dit</span>
+                    <span><u>V</u>iew</span>
+                    <span>F<u>a</u>vorites</span>
+                    <span><u>T</u>ools</span>
+                    <span><u>H</u>elp</span>
+                </div>
+                <div class="divider"></div>
+                <div class="IE-controls">
+                    <span>Back</span>
+                    <span>Forward</span>
+                    <span>Stop</span>
+                    <span>Refresh</span>
+                    <span>Home</span>
+                    <span class="ver-divider"></span>
+                    <span>Search</span>
+                    <span>Favorites</span>
+                    <span>History</span>
+                    <span class="ver-divider"></span>
+                    <span>Mail</span>
+                    <span>Print</span>
+                </div>
+                <div class="divider"></div>
+                <div class="IE-address-bar">
+                    <label for="address-input">Address</label>
+                    <input type="text" disabled id="address-input" value="https://www.my-persona.net">
+                    <span>Go</span>
+                    <span class="ver-divider"></span>
+                    <span>Links</span>
+                </div>
+            </div>
+            <div class="IE-site">
+                <div class="info-box">
+                    <img src="resources/fuukapfp.png" alt="">
+                    <span id="infospan" style="font-weight: bold;">vyx</span>
+                    <span id="infospan">no thoughts in the moment</span>
+                    <span id="infospan">hope you have a great day</span>
+                    <span id="infospan">look through the explorer for a bit</span>
+                    <span id="infospan"><3</span>
+                    <span id="infospan">super secret message</span>
+                    <span id="infospan">down below</span>
+                    <span id="infospan"> </span>
+                    <span id="infospan">bleh :></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Windows Explorer -->
+     <div class="window explorer">
+        <div class="title-bar">
+            <div class="title-bar-text" id="explorer-title-text">My Computer</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="toolbar">
+                <div class="IE-menu-bar">
+                    <span><u>F</u>ile</span>
+                    <span><u>E</u>dit</span>
+                    <span><u>V</u>iew</span>
+                    <span><u>G</u>o</span>
+                    <span>F<u>a</u>vorites</span>
+                    <span><u>H</u>elp</span>
+                </div>
+                <div class="divider"></div>
+                <div class="explorer-toolbar">
+                    <span onclick="back()">Back</span>
+                    <span>Forward</span>
+                    <span>Up</span>
+                    <span class="ver-divider"></span>
+                    <span>Cut</span>
+                    <span>Copy</span>
+                    <span>Paste</span>
+                    <span class="ver-divider"></span>
+                    <span>Undo</span>
+                    <span class="ver-divider"></span>
+                    <span>Delete</span>
+                    <span>Properties</span>
+                    <span class="ver-divider"></span>
+                    <span>Views</span>
+                </div>
+                <div class="divider"></div>
+                <div class="IE-address-bar">
+                    <label for="address-input">Address</label>
+                    <input type="text" id="address-input" class="exp-bar" value='C:\My Computer' readonly>
+                </div>
+              </div>
+            <div class="explorer-area" id="exp">
+                <div id="home-dir">
+                    <span ondblclick="openDir('games')"><img src="resources/win98 icons/directory_closed-5.png">games</span> 
+                    <span ondblclick="openDir('music')"><img src="resources/win98 icons/directory_closed-5.png">music</span>
+                    <span ondblclick="showError(this)" data-error="not quite finished yet"><img src="resources/win98 icons/directory_closed-5.png">projects</span>
+                </div>
+                <div id="games-dir" style="display: none;" class="folder-dir">
+                    <span><img src="resources/half-life.png" ondblclick="showError(this)" data-error="well you didn't expect that to work did you">Half-Life</span>
+                    <span><img src="resources/deltarune.png" style="height: 36px; width: 40px;" ondblclick="showError(this)" data-error="well you didn't expect that to work did you">DELTARUNE</span>
+                    <span><img src="resources/ultrakill.png" ondblclick="showError(this)" data-error="well you didn't expect that to work did you">ULTRAKILL</span>
+                </div>
+                <div id="music-dir" style="display: none;" class="folder-dir">
+                    <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">DArkSide - Bring Me The Horizon</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">うっせぇわ - Ado</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">In The End - Linkin Park</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">IN THREES - AS IT IS</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">PSYCHO - Hakos Baelz</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">Doomed - Reliqa</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notepad -->
+    <div class="window notepad">
+        <div class="title-bar">
+            <div class="title-bar-text">to do list - Notepad</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="IE-menu-bar">
+                <span><u>F</u>ile</span>
+                <span><u>E</u>dit</span>
+                <span><u>S</u>earch</span>
+                <span><u>H</u>elp</span>
+            </div>
+            <div class="notepad-area">
+                <span>stuff to work on in the future</span>
+                <span> </span>
+                <span>- social media links</span>
+                <span>- audio player</span>
+                <span>- functional minesweeper</span>
+                <span>- editable address bars</span>
+                <span>- finish up icons</span>
+                <span>- more easter eggs</span>
+                <span>- working start menu</span>
+                <span>- more folders to explore</span>
+                <span>and much more!</span><span id="wordpad-cursor">|</span>
+            </div>
+        </div>
+    </div>
+    <!-- Error Box -->
+    <div class="window error-box" id="error-box" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">Error</div>
+            <div class="title-bar-controls">
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body error-body">
+            <div class="error-content">
+                <img src="resources/win98 icons/msg_error-0.png" style="width: 32px;" alt="">
+                <p id="error-message">you should NOT be reading this</p>
+            </div>
+            <div class="error-footer">
+                <button class="default" onclick="closeError()" id="errorOK">OK</button>
+            </div>
+        </div>          
+    </div>
+</body>
+<script src="index.js"></script>
+</html> 

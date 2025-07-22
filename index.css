@@ -1,0 +1,452 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background-color: darkcyan;
+    justify-content: center;
+}
+
+/* login menu */
+.login {
+    width:450px;
+    height: 140px;
+    display: block;
+}
+
+.log-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-window {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+
+.login-img img {
+    height: auto;
+}
+
+.login-input {  
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.login-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 60px .5fr;
+    align-items: center;    
+}
+
+/* taskbar */
+
+.taskbar {
+    background-color: darkgrey;
+    border-top: outset lightgrey 2px;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height: 25px;
+    padding:4px;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+.notif-area {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+}
+
+#clock {
+    font-family: "Pixelated MS Sans Serif";
+    font-size: 1.5em;
+}
+
+.start {
+    gap: .2em;
+    font-weight: bold;
+    font-size: 1.2em;
+    height:100%;
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+/* wordpad */
+
+.wordpad {
+    position: absolute;
+    top:50px;
+    left:100px;
+    display: none;
+}
+
+.toolbar1 {
+    padding: 4px;
+    gap:10px;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar1 button {
+    width: 24px;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toolbar1 button img {
+    width: 14px;
+    height: 14px;
+}
+
+.toolbar1 span {
+    display: flex;
+    flex-direction: row;
+}
+
+.toolbar2 {
+    gap:10px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    display:flex;
+    flex-direction: row;   
+}
+
+.toolbar2 button {
+    width: 24px;
+    min-width:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toolbar2 button img {
+    width: 12px;
+    height: 12px;
+}
+
+.toolbar2 span {
+    display: flex;
+    flex-direction: row;
+}
+
+.ruler {
+    background: repeating-linear-gradient(to right,
+     #fefefe,
+     #fefefe 10px,
+     #ccc 10px,
+     #ccc 11px);
+    padding: 2px 5px;
+    font-size: 10px;
+    color: #333;
+    display: flex;
+    gap: 10px;
+    margin: 2px;
+    display: none;
+}
+
+.text-area {
+    background-color: white;
+    overflow: auto;
+    padding-left: 10px;
+    border: black inset 2px;
+    display: flex;
+    height: 300px;
+    width:600px;
+    font-size:1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-area h4, p {
+    margin-bottom: 12px;
+    margin-top: 16px;
+}
+
+.window-body {
+    margin : 0;
+}
+
+.status-bar {
+    padding: 2px;
+    display:flex;
+    flex-direction: row;
+}
+
+.fields {
+    margin-left:auto;
+    display:flex;
+    gap:2px;
+}
+
+.status-bar-field {
+    flex-grow: 0;
+}
+
+.status-bar-field:nth-of-type(1){
+    width:15px;
+}
+
+.status-bar-field:nth-of-type(2){
+    width:20px;
+}
+
+#wordpad-cursor {
+    visibility: visible;
+    animation: WPcursor 1.5s infinite;
+}
+
+/* internet explorer */
+
+.IE {
+    position: absolute;
+    top: 80px;
+    right:100px;
+    display: none;
+}
+
+.toolbar {
+    border:groove darkgrey 2px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.IE-menu-bar {
+    padding: 4px;
+    display: flex;
+    gap:10px;
+    user-select: none;
+}
+
+.IE-controls {
+    gap:20px;
+    padding:4px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.IE-address-bar {
+    display: flex;
+    gap: 8px;
+    padding:4px;
+    align-items: center;
+    user-select: none;
+}
+
+.IE-address-bar input{
+    width: 80%;
+}
+
+.IE-site {
+    border: inset black 2px;
+    width: 800px;
+    height: 470px;
+    overflow: auto;
+    display: flex;
+    background-image: url(resources/ado-usseewa.gif);
+    background-size: 20%;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-box {
+    background-color: black;
+    height: 90%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+    font-size: 1.5em;
+}
+
+#infospan {
+    background: linear-gradient(90deg, red, orange, yellow, lime, lightblue, blue, purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.info-box img {
+    padding-top: 4px;
+    width: 100px;
+    height: 100px;
+}
+
+/* windows explorer */
+
+.explorer {
+    position: absolute;
+    right: 450px;
+    bottom: 90px;
+    display: none;
+}
+
+.explorer-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px;
+    user-select: none;
+}
+
+.explorer-toolbar span:hover{
+    cursor:default;
+}
+
+.explorer-area {
+    width: 560px;
+    height: 240px;
+    background-color: white;
+    border: inset black 2px;
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    gap:36px;
+    user-select: none;
+}
+
+.explorer-area div {
+    display: flex;
+    gap: 24px;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: wrap;
+    height: 70%;
+}
+
+.explorer-area div span {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60px;
+    gap:4px;
+}
+
+.explorer-area img {
+    width: 36px;
+}
+
+/* error box */
+
+.error-box {
+    z-index: 99;
+    overflow: auto;
+}
+
+.error-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+    font-size: 1.5em;
+    padding: 16px;
+}
+
+.error-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-footer {
+    display: flex;
+    justify-content: center;
+}
+
+#error-message {
+    margin-bottom: 18px;
+}
+
+/* notepad */
+
+.notepad {
+    position: absolute;
+    left: 400px;
+    top:400px;
+    display: none;
+}
+
+.notepad-area {
+    width: 280px;
+    height: 340px;
+    border: inset black 2px;
+    background-color: white;
+    padding: 10px;
+    font-size: 1.7em;
+    display: flex;
+    flex-direction: column;
+}
+
+.notepad-area span {
+    padding: 4px 0 4px 0;
+}
+
+/* misc */
+
+@font-face {
+    font-family: "Pixelated MS Sans Serif";
+    src: url(resources/W95FA.otf);
+}
+
+@keyframes WPcursor {
+    0% {
+        visibility: visible;
+    }
+    25% {
+        visibility: hidden;
+    }
+    75% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+.divider {
+    background: none;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #ffffff;
+    margin: 2px 0;
+}
+
+.ver-divider {
+    background: none;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #ffffff;
+    height:16px;
+}
+
+.IE, .wordpad, .explorer {
+    scale: 110%;
+}
+
+.title-bar { 
+    user-select: none;
+}
