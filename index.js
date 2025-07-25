@@ -1,3 +1,20 @@
+// taskbar clock
+const today = new Date();
+
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    m = checkTime(m);
+    document.getElementById('clock').innerHTML =  h + ":" + m;
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
+}
+
 // directory shenanigans
 const addressBar = document.querySelector(".exp-bar");
 const titleBar = document.getElementById("explorer-title-text");
@@ -35,6 +52,56 @@ document.addEventListener("keydown", function (event) {
     }
 })
 
+// invis' easter egg
+var invisMessage;
+const day = today.getDay(); 
+
+switch (day) {
+    case 1:
+        invisMessage = "lmfai";
+        break;
+    case 2:
+        invisMessage = "what the fuck can i not change my race now";
+        break;
+    case 3:
+        invisMessage = "how old are you romanian tickling bandit";
+        break;
+    case 4:
+        invisMessage = "i never thought i would have a folder titled \"furries\" in my pictues";
+        break;
+    case 5:
+        invisMessage = "ok just give me a sex";
+        break;
+    case 6:
+        invisMessage = "if something is ass, you can still try it";
+        break;
+    case 7:
+        invisMessage = "i didn't know kazahstan existed until ec32 popped up";
+        break;
+}
+
+// tr1ke's easter egg
+let yukiPic = 1;
+const nextBut = document.getElementById("nextBut");
+const backBut = document.getElementById("backBut");
+const yukiFrame = document.getElementById("yukiPic");
+
+nextBut.addEventListener('click', function() {
+    yukiPic += 1;
+    if (yukiPic > 4) {
+        yukiPic = 1;
+    }
+    yukiFrame.src = "resources/yuki" + yukiPic + ".jpg";
+})
+
+backBut.addEventListener('click', function() {
+    yukiPic -= 1;
+    if (yukiPic < 1) {
+        yukiPic = 4;
+    }
+    yukiFrame.src = "resources/yuki" + yukiPic + ".jpg";
+})
+
 // login easter eggs
 function easter_egg() {  
     const login_egg = document.getElementById("user").value.toLowerCase().trim();
@@ -60,11 +127,16 @@ function easter_egg() {
             break;
         case "invis":
         case "invisible":
+            message = "daily deleted invis message";
+            document.getElementById("invisEgg").style.display = "block";
+            document.getElementById("invisEgg").innerHTML = "today's deleted message: " + invisMessage;
             break;
         case "ec32":
             break;
         case "tr1ke":
         case "trike":
+            message = "WARNING : yuki ahead";
+            document.querySelector(".yukiPicture").style.display = "block";
             break;
         case "jay":
             break;
@@ -74,7 +146,7 @@ function easter_egg() {
         }
         document.getElementById("egg").innerHTML = message;
     }
-    
+
 login.addEventListener("click", async function loginAnim() {
     document.querySelector(".login").style.display = "none";
     
@@ -101,6 +173,9 @@ login.addEventListener("click", async function loginAnim() {
     
     await delay(1200)
     document.querySelector(".IE").style.display = "block";
+
+    await delay(700)
+    document.querySelector(".yukiPicture").style.visibility = "visible";
 })
 // error box code
 
@@ -123,20 +198,4 @@ function showError(element) {
 
 function closeError() {
     document.getElementById("error-box").style.display = "none";
-}
-
-// taskbar clock
-
-function startTime() {
-    const today = new Date();
-    let h = today.getHours();
-    let m = today.getMinutes();
-    m = checkTime(m);
-    document.getElementById('clock').innerHTML =  h + ":" + m;
-    setTimeout(startTime, 1000);
-}
-
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};
-    return i;
 }
