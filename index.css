@@ -5,6 +5,7 @@ html, body {
     align-items: center;
     background-color: darkcyan;
     justify-content: center;
+    overflow:hidden;
 }
 
 /* login menu */
