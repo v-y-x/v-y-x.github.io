@@ -10,9 +10,17 @@ function startTime() {
     setTimeout(startTime, 1000);
 }
 
+
 function checkTime(i) {
     if (i < 10) {i = "0" + i};
     return i;
+}
+
+// easter egg hints
+var hintArray = ["Invisible", "Tr1ke", "Umbra", "sxh7", "SomeWeirdBrit"];
+var hintNum = Math.floor(Math.random() * 25);
+if (hintNum == 24){
+    document.querySelector("#user").placeholder = hintArray[Math.floor(Math.random() * hintArray.length)];
 }
 
 // directory shenanigans
@@ -102,15 +110,204 @@ backBut.addEventListener('click', function() {
     yukiFrame.src = "resources/yuki" + yukiPic + ".jpg";
 })
 
+// umbra's easter egg
+const lootTable = [
+    {
+        rarity: "common",
+        range: [1, 40],
+        items: [
+            {
+                name : "Shareware Game", img: "resources/win98 icons/shareware_disk.png"
+            },
+            {
+                name: "Freeware Program", img: "resources/win98 icons/floppy_drive.png"
+            }
+        ]
+    },
+    {
+        rarity: "uncommon",
+        range: [41, 70],
+        items: [
+            {
+                name: "USB Drive", img: "resources/win98 icons/usb.png"
+            },
+            {
+                name: "Music CD", img: "resources/win98 icons/cd_audio.png"
+            }
+        ]
+    },
+    {
+        rarity: "rare",
+        range: [71, 85],
+        items: [
+            {
+                name: "Movie DVD", img: "resources/win98 icons/cd_movie.png"
+            },
+            {
+                name: "Cracked Game", img: "resources/win98 icons/cd_cracked.png"
+            }
+        ]
+    },
+    {
+        rarity: "epic",
+        range: [86, 95],
+        items: [
+            {
+                name: "KEYGEN", img: "resources/win98 icons/keygen.png"
+            },
+            {
+                name: "Hidden URL", img: "resources/win98 icons/world-2.png"
+            }
+        ]
+    },
+    {
+        rarity: "legendary",
+        range: [96, 100],
+        items: [
+            {
+                name: "DOOM", img: "resources/win98 icons/doom.png"
+            },
+            {
+                name: "Wolfenstein 3-D", img: "resources/win98 icons/wolfenstein.png"
+            },
+            {
+                name: "Commander Keen", img: "resources/win98 icons/commander_keen.png"
+            }
+        ]
+    },
+];
+
+const rarityClasses = {
+    common: "rarity-common",
+    uncommon: "rarity-uncommon",
+    rare: "rarity-rare",
+    epic: "rarity-epic",
+    legendary: "rarity-legendary"
+};
+
+const oneBut = document.getElementById('singlePull');
+const tenBut = document.getElementById("tenPull");
+const gachaOK = document.getElementById("gachaOK");
+const rarityText = document.getElementById('rarity');
+const itemText = document.getElementById('item');
+const gachaImg = document.getElementById('gachaImg');
+var audioArray = [
+    tadaSfx = new Audio("resources/owin31.wav"),
+    legendarySfx = new Audio("resources/95boot.wav")
+]
+const uploadGif = document.getElementById("gachaPull");
+uploadGif.src = "resources/win98 icons/gacha_upload.gif" + "?t=" + new Date().getTime();
+
+function onePull() {
+    oneBut.style.display = 'none';
+    tenBut.style.display = 'none';
+    const roll = Math.floor(Math.random() * 100);
+
+    const result = lootTable.find(entry => {
+        return roll >= entry.range[0] && roll <= entry.range[1];
+    })
+    
+    const item = result.items[Math.floor(Math.random() * result.items.length)];
+    return { rarity: result.rarity, item };
+}
+
+let pullResults = [];
+let currentIndex = 0;
+
+function tenPull() {
+    pullResults = [];
+    for (var i = 0; i < 10; i++) {
+        pullResults.push(onePull());
+    }
+    currentIndex = 0;
+    gachaImg.style.display = "none";
+    uploadGif.src = "resources/win98 icons/gacha_upload.gif?t=" + Date.now();
+    uploadGif.style.display = "block";
+
+    setTimeout(() => {
+        gachaOK.style.display = 'block';
+        uploadGif.style.display = "none";
+        gachaImg.style.display = "block";
+        showNextPull();
+    }, 5260)
+}
+
+function showNextPull() {
+    if (currentIndex < pullResults.length) {
+        let result = pullResults[currentIndex];
+        currentIndex++;
+        rarityText.innerHTML = result.rarity.toUpperCase();
+        itemText.innerHTML = result.item.name;
+        gachaImg.src = result.item.img
+        rarityText.className = rarityClasses[result.rarity];
+        if (result.rarity == "legendary") {
+        audioArray.forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+            audioArray[1].play();
+        }
+        else {
+        audioArray.forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+            audioArray[0].play();
+        }
+    }
+    else {
+        oneBut.style.display = 'block';
+        tenBut.style.display = 'block';
+        gachaOK.style.display = 'none';
+        rarityText.innerHTML = '';
+        itemText.innerHTML = ''
+        gachaImg.src = 'resources/win98 icons/windows_gacha.gif';
+    }
+}
+
+oneBut.addEventListener('click', function () {
+    uploadGif.src = "resources/win98 icons/gacha_upload.gif?t=" + Date.now();
+    uploadGif.style.display = "block";
+    gachaImg.style.display = "none";
+    setTimeout(() => {
+        const result = onePull();
+        rarityText.innerHTML = result.rarity.toUpperCase();
+        rarityText.className = rarityClasses[result.rarity];
+        itemText.innerHTML = result.item.name;
+        gachaImg.src = result.item.img;
+        if (result.rarity == "legendary") {
+            audioArray.forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+            audioArray[1].play();
+        }
+        else {
+            audioArray.forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+            audioArray[0].play();
+        }
+        uploadGif.style.display = "none";
+        gachaImg.style.display = "block";
+        gachaOK.style.display = 'block';
+    }, 5260)
+})
+
 // login easter eggs
+function getName() {
+    var login_egg = document.getElementById("user").value.toLowerCase().trim();
+    return login_egg;
+}
+
 function easter_egg() {  
-    const login_egg = document.getElementById("user").value.toLowerCase().trim();
-    if (login_egg) {
+    if (getName()) {
         document.getElementById("logging").innerHTML = "Welcome, " + document.getElementById("user").value;
     }
     
     let message = "";
-    switch (login_egg) {
+    switch (getName()) {
         case "vyx":
             message = "oh hey, that's the creator!";
             break;
@@ -121,9 +318,11 @@ function easter_egg() {
         case "brit":
         case "someweirdbrit":
             message = "This page is now under the British government";
-            document.querySelector(".IE-site").style.backgroundImage = "url(resources/united-kingdom-flag.gif)"
+            document.querySelector(".IE-site").style.backgroundImage = "url(resources/united-kingdom-flag.gif)";
             break;
         case "umbra":
+            message = "GACHA GAMBLING WOOOOO";
+            document.querySelector(".umbraGacha").style.display = "block";
             break;
         case "invis":
         case "invisible":
@@ -171,11 +370,12 @@ login.addEventListener("click", async function loginAnim() {
     await delay(600);
     document.querySelector(".explorer").style.display = "block";    
     
-    await delay(1200)
+    await delay(1200);
     document.querySelector(".IE").style.display = "block";
 
-    await delay(700)
+    await delay(700);
     document.querySelector(".yukiPicture").style.visibility = "visible";
+    document.querySelector(".umbraGacha").style.visibility = "visible";
 })
 // error box code
 
@@ -199,3 +399,5 @@ function showError(element) {
 function closeError() {
     document.getElementById("error-box").style.display = "none";
 }
+
+window.onload = startTime();

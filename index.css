@@ -379,6 +379,63 @@ html, body {
     margin: 6px;
 }
 
+/* umbra's easter egg */
+
+.umbraGacha {
+    z-index: 99;
+    position: absolute;
+    right: 80px;
+    bottom: 50px;
+    width: 650px;
+    height: 360px;
+    display: none;
+    visibility: hidden;
+}
+
+.gacha-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 2em;
+    height: 270px;
+}
+
+.gacha-button {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.gacha-container img {
+    padding: 20px;
+    width: 120px;
+}
+
+.rarity-common {
+    color: gray;
+}
+
+.rarity-uncommon {
+    color: green;
+}
+
+.rarity-rare {
+    color: blue;
+}
+
+.rarity-epic {
+    color: purple;
+}
+
+.rarity-legendary {
+    color: rgb(227, 133, 0);
+}
+
 /* error box */
 
 .error-box {

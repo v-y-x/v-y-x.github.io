@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body onload="startTime()">
+<body>
     <!-- Login Menu -->
     <div class="window login">
         <div class="title-bar">
@@ -47,7 +47,7 @@
             <div class="title-bar-text">Welcome to Windows</div>
         </div>
             <div class="window-body log-start">
-                <div  id="logging" style="padding: 15px; font-size:1.5em;">Welcome</div>
+                <div id="logging" style="padding: 15px; font-size:1.5em;">Welcome</div>
                 <div id="egg" style="padding: 0 15px 10px 15px;"></div>
             </div>
     </div>
@@ -333,6 +333,30 @@
         </div>
      </div>
 
+    <!-- Umbra's Easter Egg-->
+     <div class="window umbraGacha">
+        <div class="title-bar">
+            <div class="title-bar-text">Windows 98 Gacha Simulator</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button disabled aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body gacha-container">
+            <div style="font-size: 1.5em;">Windows 98 Gacha Simulator</div>
+            <div id="rarity"></div>
+            <img src="resources/win98 icons/windows_gacha.gif" width="48px" id="gachaImg" alt="">
+            <img src="resources/win98 icons/gacha_upload.gif" style="display: none;" alt="" id="gachaPull">
+            <div id="item"></div>
+            <div class="gacha-button">
+               <button id="tenPull" onclick="tenPull()">Pull x10</button>
+               <button class="default" style="display: none;" id="gachaOK" onclick="showNextPull()">OK</button>
+               <button id="singlePull" onclick="onePull()">Pull x1</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Error Box -->
     <div class="window error-box" id="error-box" style="display: none;">
         <div class="title-bar">
@@ -352,5 +376,9 @@
         </div>          
     </div>
 </body>
-<script src="index.js"></script>
+<script>
+    fetch("index.js")
+    .then(r => r.text())
+    .then(eval);
+</script>
 </html> 
