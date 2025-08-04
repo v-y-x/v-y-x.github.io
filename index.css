@@ -8,6 +8,11 @@ html, body {
     overflow:hidden;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /* login menu */
 .login {
     width:450px;
@@ -348,6 +353,14 @@ html, body {
     gap:4px;
 }
 
+.explorer-area div span a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60px;
+    gap: 4px;
+}
+
 .explorer-area img {
     width: 36px;
 }
@@ -382,7 +395,7 @@ html, body {
 
 /* umbra's easter egg */
 
-.umbraGacha {
+.gachaGame {
     z-index: 99;
     position: absolute;
     right: 80px;
@@ -435,6 +448,13 @@ html, body {
 
 .rarity-legendary {
     color: rgb(227, 133, 0);
+}
+
+/* futty's easter egg */
+
+.frost-folder img{
+    width: 25%;
+    height: 80%;
 }
 
 /* error box */

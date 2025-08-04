@@ -143,6 +143,7 @@
                 <p>i'm vyx, an 18y/o person just surfing through the net. my most commons hobbies are programming & gaming.</p>
                 <p>i treat this website as a personal page and project of mine. it's still a very heavy WIP, but i plan on adding more things in the future.</p>
                 <p>hope you enjoy your stay!</p>
+                <p>ver 1.0.2</p>
                 <span id="invisEgg" style="color: white; display: block; width: 300px; overflow: auto;"></span>
             </div>
             <div class="status-bar">
@@ -260,9 +261,11 @@
               </div>
             <div class="explorer-area" id="exp">
                 <div id="home-dir">
-                    <span ondblclick="openDir('games')"><img src="resources/win98 icons/directory_closed-5.png">games</span> 
+                    <span ondblclick="openDir('games')"><img src="resources/win98 icons/directory_closed-5.png">games</span>
                     <span ondblclick="openDir('music')"><img src="resources/win98 icons/directory_closed-5.png">music</span>
-                    <span ondblclick="showError(this)" data-error="not quite finished yet"><img src="resources/win98 icons/directory_closed-5.png">projects</span>
+                    <span ondblclick="openDir('projects')"><img src="resources/win98 icons/directory_closed-5.png">projects</span>
+                    <span ondblclick="openDir('futty\'s folder')" id="frost-folder" style="display: none;"><img src="resources/win98 icons/directory_closed-5.png" alt="">futty's folder</span>
+                    <span ondblclick="openDir('bingle\'s music')" id="deftone-folder" style="display: none"><img src="resources/win98 icons/directory_closed-5.png">bingle's music</span>
                 </div>
                 <div id="games-dir" style="display: none;" class="folder-dir">
                     <span><img src="resources/half-life.png" ondblclick="showError(this)" data-error="well you didn't expect that to work did you">Half-Life</span>
@@ -276,6 +279,23 @@
                     <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">IN THREES - AS IT IS</span>
                     <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">PSYCHO - Hakos Baelz</span>
                     <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">Doomed - Reliqa</span>
+                </div>
+                <div id="bingle's music-dir" style="display: none;" class="folder-dir">
+                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Combat - Deftones</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Goon Squad - Deftones</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Rosemary - Deftones</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Kimdracula - Deftones</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Rats!Rats!Rats! - Deftones</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Hole in the Earth - Deftones</span>
+                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Diamond Eyes - Deftones</span>
+                </div>
+                <div class="folder-dir" style="display: none;" id="projects-dir">
+                    <span><a href="https://github.com/v-y-x/v-y-x.github.io"><img src="resources/win98 icons/world-2.png" alt="">this website</a></span>
+                </div>
+                <div class="folder-dir frost-folder" style="display:none; width: 100%;" id="futty's folder-dir">
+                    <img src="resources/jack_frost (1).gif" alt="">
+                    <img src="resources/jack_frost (2).gif" alt="">
+                    <img src="resources/jack_frost (3).gif" alt="">
                 </div>
             </div>
         </div>
@@ -334,7 +354,7 @@
      </div>
 
     <!-- Umbra's Easter Egg-->
-     <div class="window umbraGacha">
+     <div class="window gachaGame">
         <div class="title-bar">
             <div class="title-bar-text">Windows 98 Gacha Simulator</div>
             <div class="title-bar-controls">

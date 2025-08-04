@@ -17,7 +17,7 @@ function checkTime(i) {
 }
 
 // easter egg hints
-var hintArray = ["Invisible", "Tr1ke", "Umbra", "sxh7", "SomeWeirdBrit"];
+var hintArray = ["Invisible", "Tr1ke", "Umbra", "Sxh7", "SomeWeirdBrit", "Futty", "Apir", "Bingleton"];
 var hintNum = Math.floor(Math.random() * 25);
 if (hintNum == 24){
     document.querySelector("#user").placeholder = hintArray[Math.floor(Math.random() * hintArray.length)];
@@ -322,7 +322,7 @@ function easter_egg() {
             break;
         case "umbra":
             message = "GACHA GAMBLING WOOOOO";
-            document.querySelector(".umbraGacha").style.display = "block";
+            document.querySelector(".gachaGame").style.display = "block";
             break;
         case "invis":
         case "invisible":
@@ -330,19 +330,28 @@ function easter_egg() {
             document.getElementById("invisEgg").style.display = "block";
             document.getElementById("invisEgg").innerHTML = "today's deleted message: " + invisMessage;
             break;
-        case "ec32":
-            break;
         case "tr1ke":
         case "trike":
             message = "WARNING : yuki ahead";
             document.querySelector(".yukiPicture").style.display = "block";
             break;
-        case "jay":
-            break;
         case "adeias":
         case "adidas":
             break;
+        case "futty":
+            message = "Hee-ho!";
+            document.querySelector("#frost-folder").style.display = "block";
+            break;
+        case "apir":
+            message = "<video autoplay src='resources/hello.mp4'>"
+            break;
+        case "bingle":
+        case "bingleton":
+            message = "biggest deftones fan ever"
+            document.querySelector("#deftone-folder").style.display = "block";
         }
+        
+        
         document.getElementById("egg").innerHTML = message;
     }
 
@@ -375,7 +384,7 @@ login.addEventListener("click", async function loginAnim() {
 
     await delay(700);
     document.querySelector(".yukiPicture").style.visibility = "visible";
-    document.querySelector(".umbraGacha").style.visibility = "visible";
+    document.querySelector(".gachaGame").style.visibility = "visible";
 })
 // error box code
 
