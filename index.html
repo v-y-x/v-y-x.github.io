@@ -64,14 +64,24 @@
         </div>
     </div>
     
+    <!-- Dekstop -->
+    <div class="desktop">
+        <span ondblclick="openApp(this)" app="explorer"><img src="resources/win98 icons/computer_explorer_cool-0.png" alt="">My Computer</span>
+        <span ondblclick="openApp(this)" app="IE"><img src="resources/win98 icons/msie1-2.png" alt="">Internet Explorer</span>
+        <span ondblclick="openApp(this)" app="notepad"><img src="resources/win98 icons/notepad_file-2.png" alt="">to do list.txt</span>
+        <span ondblclick="openApp(this)" app="wordpad"><img src="resources/win98 icons/wordpad.png" alt="">my bio.doc</span>
+        <span ondblclick="openApp(this)" app="yukiPicture" class="yukiApp"><img src="resources/win98 icons/file_blue_grad_paint-0.png" alt="">yuki</span>
+        <span ondblclick="openApp(this)" app="gachaGame" class="gachaApp"><img src="resources/win98 icons/windows_gacha.gif" alt="">W98 Gacha Sim</span>
+    </div>    
+
     <!-- Wordpad -->
     <div class="window wordpad">
         <div class="title-bar">
             <div class="title-bar-text">my bio.doc - Wordpad</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <button aria-label="Minimize" disabled></button>
+                <button aria-label="Maximize" disabled></button>
+                <button aria-label="Close" onclick="closeApp(this)" app="wordpad"></button>
             </div>
         </div>
         <div class="window-body">
@@ -143,8 +153,8 @@
                 <p>i'm vyx, an 18y/o person just surfing through the net. my most commons hobbies are programming & gaming.</p>
                 <p>i treat this website as a personal page and project of mine. it's still a very heavy WIP, but i plan on adding more things in the future.</p>
                 <p>hope you enjoy your stay!</p>
-                <p>ver 1.0.2</p>
-                <span id="invisEgg" style="color: white; display: block; width: 300px; overflow: auto;"></span>
+                <p>ver 1.1</p>
+                <span id="invisEgg" style="color: white; display: block; width: 500px; overflow: auto;"></span>
             </div>
             <div class="status-bar">
                 <span>For Help, press F1</span>
@@ -154,16 +164,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 
     <!-- Internet Explorer -->
     <div class="window IE">
         <div class="title-bar">
             <div class="title-bar-text">https://www.my-persona.net</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <button aria-label="Minimize" disabled></button>
+                <button aria-label="Maximize" disabled></button>
+                <button aria-label="Close" onclick="closeApp(this)" app="IE"></button>
             </div>
         </div>
         <div class="window-body">
@@ -178,18 +188,18 @@
                 </div>
                 <div class="divider"></div>
                 <div class="IE-controls">
-                    <span>Back</span>
-                    <span>Forward</span>
-                    <span>Stop</span>
-                    <span>Refresh</span>
-                    <span>Home</span>
+                    <span><img src="resources/IE 3.0 icons/back_disabled.png">Back</span>
+                    <span><img src="resources/IE 3.0 icons/forward_disabled.png">Forward</span>
+                    <span><img src="resources/IE 3.0 icons/stop_grey.png">Stop</span>
+                    <span><img src="resources/IE 3.0 icons/refresh_grey.png">Refresh</span>
+                    <span><img src="resources/IE 3.0 icons/home_grey.png">Home</span>
                     <span class="ver-divider"></span>
-                    <span>Search</span>
-                    <span>Favorites</span>
-                    <span>History</span>
+                    <span><img src="resources/IE 3.0 icons/search_grey.png">Search</span>
+                    <span><img src="resources/IE 3.0 icons/favourites_grey.png">Favorites</span>
+                    <span><img src="resources/IE 3.0 icons/history_grey.png">History</span>
                     <span class="ver-divider"></span>
-                    <span>Mail</span>
-                    <span>Print</span>
+                    <span><img src="resources/IE 3.0 icons/mail_grey.png">Mail</span>
+                    <span><img src="resources/IE 3.0 icons/print_grey.png">Print</span>
                 </div>
                 <div class="divider"></div>
                 <div class="IE-address-bar">
@@ -202,16 +212,14 @@
             </div>
             <div class="IE-site">
                 <div class="info-box">
-                    <img src="resources/fuukapfp.png" alt="">
+                    <img src="" id="pfp">
                     <span id="infospan" style="font-weight: bold;">vyx</span>
                     <span id="infospan">no thoughts in the moment</span>
-                    <span id="infospan">hope you have a great day</span>
-                    <span id="infospan">look through the explorer for a bit</span>
-                    <span id="infospan"><3</span>
-                    <span id="infospan">super secret message</span>
-                    <span id="infospan">down below</span>
+                    <span id="infospan">have a great day</span>
                     <span id="infospan"> </span>
-                    <span id="infospan">bleh :></span>
+                    <span id="infospan"><3</span>
+                    <span id="infospan">look through the explorer for a bit</span>
+                    <span id="infospan">take a break before moving on</span>
                 </div>
             </div>
         </div>
@@ -221,9 +229,9 @@
         <div class="title-bar">
             <div class="title-bar-text" id="explorer-title-text">My Computer</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <button aria-label="Minimize" disabled></button>
+                <button aria-label="Maximize" disabled></button>
+                <button aria-label="Close" onclick="closeApp(this)" app="explorer"></button>
             </div>
         </div>
         <div class="window-body">
@@ -265,7 +273,6 @@
                     <span ondblclick="openDir('music')"><img src="resources/win98 icons/directory_closed-5.png">music</span>
                     <span ondblclick="openDir('projects')"><img src="resources/win98 icons/directory_closed-5.png">projects</span>
                     <span ondblclick="openDir('futty\'s folder')" id="frost-folder" style="display: none;"><img src="resources/win98 icons/directory_closed-5.png" alt="">futty's folder</span>
-                    <span ondblclick="openDir('bingle\'s music')" id="deftone-folder" style="display: none"><img src="resources/win98 icons/directory_closed-5.png">bingle's music</span>
                 </div>
                 <div id="games-dir" style="display: none;" class="folder-dir">
                     <span><img src="resources/half-life.png" ondblclick="showError(this)" data-error="well you didn't expect that to work did you">Half-Life</span>
@@ -279,15 +286,6 @@
                     <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">IN THREES - AS IT IS</span>
                     <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">PSYCHO - Hakos Baelz</span>
                     <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">Doomed - Reliqa</span>
-                </div>
-                <div id="bingle's music-dir" style="display: none;" class="folder-dir">
-                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Combat - Deftones</span>
-                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Goon Squad - Deftones</span>
-                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Rosemary - Deftones</span>
-                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Kimdracula - Deftones</span>
-                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Rats!Rats!Rats! - Deftones</span>
-                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Hole in the Earth - Deftones</span>
-                    <span><img src="resources/win98 icons/soundyel-4.png" alt="" ondblclick="showError(this)" data-error="playable audio will come soon!">Diamond Eyes - Deftones</span>
                 </div>
                 <div class="folder-dir" style="display: none;" id="projects-dir">
                     <span><a href="https://github.com/v-y-x/v-y-x.github.io"><img src="resources/win98 icons/world-2.png" alt="">this website</a></span>
@@ -304,11 +302,11 @@
     <!-- Notepad -->
     <div class="window notepad">
         <div class="title-bar">
-            <div class="title-bar-text">to do list - Notepad</div>
+            <div class="title-bar-text">to do list.txt - Notepad</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <button aria-label="Minimize" disabled></button>
+                <button aria-label="Maximize" disabled></button>
+                <button aria-label="Close" onclick="closeApp(this)" app="notepad"></button>
             </div>
         </div>
         <div class="window-body">
@@ -339,9 +337,9 @@
         <div class="title-bar">
             <div class="title-bar-text">Pictures - yuki.bmp</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
+                <button aria-label="Minimize" disabled></button>
                 <button aria-label="Maximize" disabled></button>
-                <button aria-label="Close"></button>
+                <button aria-label="Close" onclick="closeApp(this)" app="yukiPicture"></button>
             </div>
         </div>
         <div class="window-body">
@@ -358,9 +356,9 @@
         <div class="title-bar">
             <div class="title-bar-text">Windows 98 Gacha Simulator</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
+                <button disabled aria-label="Minimize"></button>
                 <button disabled aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <button aria-label="Close" onclick="closeApp(this)" app="gachaGame"></button>
             </div>
         </div>
         <div class="window-body gacha-container">
@@ -382,7 +380,7 @@
         <div class="title-bar">
             <div class="title-bar-text">Error</div>
             <div class="title-bar-controls">
-                <button aria-label="Close"></button>
+                <button aria-label="Close" onclick="closeError()"></button>
             </div>
         </div>
         <div class="window-body error-body">

@@ -57,6 +57,32 @@ a {
     align-items: center;    
 }
 
+/* desktop */
+
+.desktop {
+    font-family: "Pixelated MS Sans Serif";
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    user-select: none;
+}
+
+.desktop span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    gap: 6px;
+}
+.desktop span img {
+    width: 40px;
+    height: 40px;
+}
+
+
 /* taskbar */
 
 .taskbar {
@@ -225,8 +251,8 @@ a {
 
 .IE {
     position: absolute;
-    top: 80px;
-    right:100px;
+    top: 50px;
+    left: 100px;
     display: none;
 }
 
@@ -237,6 +263,7 @@ a {
     flex-direction: column;
 }
 
+
 .IE-menu-bar {
     padding: 4px;
     display: flex;
@@ -245,11 +272,23 @@ a {
 }
 
 .IE-controls {
+    height: 36px;
     gap:20px;
     padding:4px;
     display: flex;
     align-items: center;
     user-select: none;
+}
+
+.IE-controls span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.IE-controls img {
+    width: 20px;
+    padding: 4px;
 }
 
 .IE-address-bar {
@@ -307,8 +346,8 @@ a {
 
 .explorer {
     position: absolute;
-    right: 450px;
-    bottom: 90px;
+    top: 50px;
+    left: 100px;
     display: none;
 }
 
@@ -318,6 +357,7 @@ a {
     gap: 12px;
     padding: 4px;
     user-select: none;
+    height: 12px;
 }
 
 .explorer-toolbar span:hover{
@@ -368,12 +408,10 @@ a {
 /* tr1ke's easter egg */
 
 .yukiPicture {
-    z-index: 99;
     position: absolute;
-    right:180px;
-    bottom: 55px;
+    top: 50px;
+    left: 100px;;
     display: none;
-    visibility: hidden;
 }
 
 .yuki-container {
@@ -393,17 +431,23 @@ a {
     margin: 6px;
 }
 
+.yukiApp {
+    visibility: hidden;
+}
+
 /* umbra's easter egg */
 
+.gachaApp {
+    visibility: hidden;
+}
+
 .gachaGame {
-    z-index: 99;
     position: absolute;
-    right: 80px;
-    bottom: 50px;
+    top: 50px;
+    left: 100px;
     width: 650px;
     height: 360px;
     display: none;
-    visibility: hidden;
 }
 
 .gacha-container {
@@ -492,8 +536,8 @@ a {
 
 .notepad {
     position: absolute;
-    left: 400px;
-    top:400px;
+    top: 50px;
+    left: 100px;
     display: none;
 }
 
@@ -545,7 +589,7 @@ a {
     background: none;
     border-left: 1px solid #808080;
     border-right: 1px solid #ffffff;
-    height:16px;
+    height:135%;
 }
 
 .IE, .wordpad, .explorer {

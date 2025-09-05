@@ -17,11 +17,27 @@ function checkTime(i) {
 }
 
 // easter egg hints
-var hintArray = ["Invisible", "Tr1ke", "Umbra", "Sxh7", "SomeWeirdBrit", "Futty", "Apir", "Bingleton"];
+var hintArray = ["Invisible", "Tr1ke", "Umbra", "Sxh7", "SomeWeirdBrit", "Futty", "Apir"];
 var hintNum = Math.floor(Math.random() * 25);
 if (hintNum == 24){
     document.querySelector("#user").placeholder = hintArray[Math.floor(Math.random() * hintArray.length)];
 }
+
+// pfp randomizer
+const pfps = [
+  "resources/pfp1.jpg",
+  "resources/pfp2.png",
+  "resources/pfp3.png",
+  "resources/pfp4.jpeg",
+  "resources/pfp5.png",
+  "resources/pfp6.png",
+  "resources/pfp7.jpg",
+  "resources/pfp8.jpg"
+];
+
+const ranPfp = Math.floor(Math.random() * pfps.length);
+document.getElementById("pfp").src = pfps[ranPfp];  
+
 
 // directory shenanigans
 const addressBar = document.querySelector(".exp-bar");
@@ -42,6 +58,56 @@ function back() {
     document.getElementById("home-dir").style.display = "flex";
     addressBar.value = "C:\\My Computer";
     titleBar.innerHTML = "My Computer";
+}
+
+// window functionality
+function openApp(element) {
+    const app = element.getAttribute("app");
+    document.querySelector("." + app).style.display = "block";
+}
+
+function closeApp(element) {
+    const app = element.getAttribute("app");
+    const window = document.querySelector("." + app)
+    window.style.display = "none";
+    window.style.top = 50 + 'px';
+    window.style.left = 100 + 'px';
+}
+
+document.querySelectorAll(".title-bar").forEach(bar => {
+    bar.addEventListener("mousedown", startDrag);
+})
+
+var topZ = 1;
+
+document.querySelectorAll(".window").forEach(window => {
+    window.addEventListener("mousedown", () => {
+        window.style.zIndex = ++topZ;
+    })
+})
+
+function startDrag(e) {
+    const windowE = e.target.parentElement;
+    const startX = e.clientX;
+    const startY = e.clientY;
+    const startLeft = windowE.offsetLeft;
+    const startTop = windowE.offsetTop;
+    
+    function onMouseMove(e) {
+        let currentX = e.clientX;
+        let currentY = e.clientY;
+
+        let dx = currentX - startX;
+        let dy = currentY - startY;
+
+        windowE.style.left = startLeft + dx + "px";
+        windowE.style.top = startTop + dy + "px";
+    }
+
+    document.addEventListener("mousemove", onMouseMove); 
+    document.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", onMouseMove);
+    })
 }
 
 // login functionality
@@ -322,7 +388,7 @@ function easter_egg() {
             break;
         case "umbra":
             message = "GACHA GAMBLING WOOOOO";
-            document.querySelector(".gachaGame").style.display = "block";
+            document.querySelector(".gachaApp").style.visibility = "visible";
             break;
         case "invis":
         case "invisible":
@@ -333,7 +399,7 @@ function easter_egg() {
         case "tr1ke":
         case "trike":
             message = "WARNING : yuki ahead";
-            document.querySelector(".yukiPicture").style.display = "block";
+            document.querySelector(".yukiApp").style.visibility = "visible";
             break;
         case "adeias":
         case "adidas":
@@ -345,10 +411,6 @@ function easter_egg() {
         case "apir":
             message = "<video autoplay src='resources/hello.mp4'>"
             break;
-        case "bingle":
-        case "bingleton":
-            message = "biggest deftones fan ever"
-            document.querySelector("#deftone-folder").style.display = "block";
         }
         
         
@@ -370,21 +432,8 @@ login.addEventListener("click", async function loginAnim() {
     await delay(1000);
     document.querySelector(".taskbar").style.display = "flex";
 
-    await delay(500);
-    document.querySelector(".notepad").style.display = "block";
-    
-    await delay(150);
-    document.querySelector(".wordpad").style.display = "block";    
-    
-    await delay(600);
-    document.querySelector(".explorer").style.display = "block";    
-    
-    await delay(1200);
-    document.querySelector(".IE").style.display = "block";
-
-    await delay(700);
-    document.querySelector(".yukiPicture").style.visibility = "visible";
-    document.querySelector(".gachaGame").style.visibility = "visible";
+    await delay(1100);
+    document.querySelector(".desktop").style.display = "flex";
 })
 // error box code
 
