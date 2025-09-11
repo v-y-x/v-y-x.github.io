@@ -110,6 +110,19 @@ function startDrag(e) {
     })
 }
 
+// hover functionality ( for IE and WE )
+let buttons = document.querySelectorAll(".hover-button");
+buttons.forEach(button => {
+    button.addEventListener("mouseover", () => {
+        let atr = button.getAttribute("button");
+        button.src = "resources/IE 3.0 icons/" + atr + "_color.png"; 
+    })
+    button.addEventListener("mouseout", () => {
+        let atr = button.getAttribute("button");
+        button.src = "resources/IE 3.0 icons/" + atr + "_grey.png"
+    })
+})
+
 // login functionality
 const login = document.getElementById("loginOK")
 var loginAudio = new Audio("resources/95boot.wav") 
@@ -153,6 +166,56 @@ switch (day) {
         invisMessage = "i didn't know kazahstan existed until ec32 popped up";
         break;
 }
+
+// discord drama generator
+const keywordList = [
+    ["Vyx ", "Anubis ", "Polar ", "Jimi ", "Acre", "Yvette ", "Hearts ", "Rosie ", "Vik ", "JJ ", "Cassie "],
+    ["is actually ", "is lowkey ", "is seriously ", "is dating ", "fucking loves ", "isn't really"],
+    ["a neilblud.", "Hitler.", "a chud.", "problematic media.", "Mussolini.", "an Israeli.", "a cuck.", "a bald retard."]
+];
+
+const generateBut = document.getElementById("DDG-button1");
+const tickSfx = new Audio("resources/START.flac");
+const dingSfx = new Audio("resources/DING.flac")
+
+let counter = 0;
+
+generateBut.addEventListener("click", generateDrama);
+
+async function genWord(i) {
+    generateBut.style.display = "none";
+    counter = 0;
+    let key = document.getElementById("keyword" + i);
+    const currentList = keywordList[i];
+
+    while (counter < 12) {
+        counter++;
+        key.innerHTML = currentList[Math.floor(Math.random() * currentList.length)];
+        tickSfx.play();
+        await delay(25 * counter);
+    }
+    if (i <= 1) {
+        dingSfx.play();
+    }
+    else {
+        tadaSfx.play();
+    }
+    await delay(1000);
+}
+
+async function generateDrama() {
+    document.getElementById("span2").style.display = "none";
+    document.getElementById("bold1").style.display = "none";
+    document.getElementById("span1").style.display = "none";
+
+    for (let i = 0; i < keywordList.length; i++) {
+        await genWord(i);
+    }
+    await delay(1000);
+    generateBut.innerHTML = "Re-generate";
+    generateBut.style.display = "block";
+}
+
 
 // tr1ke's easter egg
 let yukiPic = 1;
@@ -411,6 +474,9 @@ function easter_egg() {
         case "apir":
             message = "<video autoplay src='resources/hello.mp4'>"
             break;
+        case "discord":
+            message = "nothingburger drama bro";
+            document.querySelector('.discordApp').style.visibility = "visible";
         }
         
         

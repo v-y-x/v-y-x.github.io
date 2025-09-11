@@ -75,6 +75,8 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 8px;
+    width: 82px;
+    text-align: center;
     gap: 6px;
 }
 .desktop span img {
@@ -280,6 +282,7 @@ a {
     user-select: none;
 }
 
+
 .IE-controls span{
     display: flex;
     flex-direction: column;
@@ -354,10 +357,21 @@ a {
 .explorer-toolbar {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
     padding: 4px;
     user-select: none;
-    height: 12px;
+    height: 36px;
+}
+
+.explorer-toolbar span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explorer-toolbar img {
+    width: 20px;
+    padding: 4px;
 }
 
 .explorer-toolbar span:hover{
@@ -365,7 +379,7 @@ a {
 }
 
 .explorer-area {
-    width: 560px;
+    width: 620px;
     height: 240px;
     background-color: white;
     border: inset black 2px;
@@ -499,6 +513,39 @@ a {
 .frost-folder img{
     width: 25%;
     height: 80%;
+}
+
+/* discord drama generator */
+
+.discordDrama {
+    position: absolute;
+    top: 100px;
+    left:50px
+}
+
+.DDG-menu {
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    gap: 14px;
+    margin: 14px;
+    align-items: center;
+}
+
+.DDG-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+
+.discordApp {
+    visibility: hidden;
+}
+
+#sub-head {
+    opacity: 50%;
+    font-size: .4em;
 }
 
 /* error box */

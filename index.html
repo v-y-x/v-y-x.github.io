@@ -72,6 +72,7 @@
         <span ondblclick="openApp(this)" app="wordpad"><img src="resources/win98 icons/wordpad.png" alt="">my bio.doc</span>
         <span ondblclick="openApp(this)" app="yukiPicture" class="yukiApp"><img src="resources/win98 icons/file_blue_grad_paint-0.png" alt="">yuki</span>
         <span ondblclick="openApp(this)" app="gachaGame" class="gachaApp"><img src="resources/win98 icons/windows_gacha.gif" alt="">W98 Gacha Sim</span>
+        <span ondblclick="openApp(this)" app="discordDrama" class="discordApp"><img src="resources/windows-0.png" alt="">Discord Drama Generator '98</span>
     </div>    
 
     <!-- Wordpad -->
@@ -153,7 +154,7 @@
                 <p>i'm vyx, an 18y/o person just surfing through the net. my most commons hobbies are programming & gaming.</p>
                 <p>i treat this website as a personal page and project of mine. it's still a very heavy WIP, but i plan on adding more things in the future.</p>
                 <p>hope you enjoy your stay!</p>
-                <p>ver 1.1</p>
+                <p>ver 1.1.1</p>
                 <span id="invisEgg" style="color: white; display: block; width: 500px; overflow: auto;"></span>
             </div>
             <div class="status-bar">
@@ -190,16 +191,16 @@
                 <div class="IE-controls">
                     <span><img src="resources/IE 3.0 icons/back_disabled.png">Back</span>
                     <span><img src="resources/IE 3.0 icons/forward_disabled.png">Forward</span>
-                    <span><img src="resources/IE 3.0 icons/stop_grey.png">Stop</span>
-                    <span><img src="resources/IE 3.0 icons/refresh_grey.png">Refresh</span>
-                    <span><img src="resources/IE 3.0 icons/home_grey.png">Home</span>
+                    <span><img class="hover-button" button="stop" src="resources/IE 3.0 icons/stop_grey.png">Stop</span>
+                    <span><img class="hover-button" button="refresh" src="resources/IE 3.0 icons/refresh_grey.png">Refresh</span>
+                    <span><img class="hover-button" button="home" src="resources/IE 3.0 icons/home_grey.png">Home</span>
                     <span class="ver-divider"></span>
-                    <span><img src="resources/IE 3.0 icons/search_grey.png">Search</span>
-                    <span><img src="resources/IE 3.0 icons/favourites_grey.png">Favorites</span>
-                    <span><img src="resources/IE 3.0 icons/history_grey.png">History</span>
+                    <span><img class="hover-button" button="search" src="resources/IE 3.0 icons/search_grey.png">Search</span>
+                    <span><img class="hover-button" button="favourites" src="resources/IE 3.0 icons/favourites_grey.png">Favorites</span>
+                    <span><img class="hover-button" button="history" src="resources/IE 3.0 icons/history_grey.png">History</span>
                     <span class="ver-divider"></span>
-                    <span><img src="resources/IE 3.0 icons/mail_grey.png">Mail</span>
-                    <span><img src="resources/IE 3.0 icons/print_grey.png">Print</span>
+                    <span><img class="hover-button" button="mail" src="resources/IE 3.0 icons/mail_grey.png">Mail</span>
+                    <span><img class="hover-button" button="print" src="resources/IE 3.0 icons/print_grey.png">Print</span>
                 </div>
                 <div class="divider"></div>
                 <div class="IE-address-bar">
@@ -216,8 +217,8 @@
                     <span id="infospan" style="font-weight: bold;">vyx</span>
                     <span id="infospan">no thoughts in the moment</span>
                     <span id="infospan">have a great day</span>
-                    <span id="infospan"> </span>
                     <span id="infospan"><3</span>
+                    <span id="infospan"> </span>
                     <span id="infospan">look through the explorer for a bit</span>
                     <span id="infospan">take a break before moving on</span>
                 </div>
@@ -246,20 +247,20 @@
                 </div>
                 <div class="divider"></div>
                 <div class="explorer-toolbar">
-                    <span onclick="back()">Back</span>
-                    <span>Forward</span>
-                    <span>Up</span>
+                    <span onclick="back()"><img class="hover-button" button="back" src="resources/IE 3.0 icons/back_grey.png">Back</span>
+                    <span><img class="hover-button" button="forward" src="resources/IE 3.0 icons/forward_grey.png">Forward</span>
+                    <span><img class="hover-button" button="up" src="resources/IE 3.0 icons/up_grey.png">Up</span>
                     <span class="ver-divider"></span>
-                    <span>Cut</span>
-                    <span>Copy</span>
-                    <span>Paste</span>
+                    <span><img class="hover-button" button="cut" src="resources/IE 3.0 icons/cut_grey.png">Cut</span>
+                    <span><img class="hover-button" button="copy" src="resources/IE 3.0 icons/copy_grey.png">Copy</span>
+                    <span><img class="hover-button" button="paste" src="resources/IE 3.0 icons/paste_grey.png">Paste</span>
                     <span class="ver-divider"></span>
-                    <span>Undo</span>
+                    <span><img class="hover-button" button="undo" src="resources/IE 3.0 icons/undo_grey.png">Undo</span>
                     <span class="ver-divider"></span>
-                    <span>Delete</span>
-                    <span>Properties</span>
+                    <span><img class="hover-button" button="delete" src="resources/IE 3.0 icons/delete_grey.png">Delete</span>
+                    <span><img class="hover-button" button="properties" src="resources/IE 3.0 icons/properties_grey.png">Properties</span>
                     <span class="ver-divider"></span>
-                    <span>Views</span>
+                    <span><img class="hover-button" button="views" src="resources/IE 3.0 icons/views_grey.png">Views</span>
                 </div>
                 <div class="divider"></div>
                 <div class="IE-address-bar">
@@ -332,7 +333,7 @@
         </div>
     </div>
 
-    <!-- Tr1ke's Easter Egg -->
+    <!-- the dawg -->
      <div class="window yukiPicture">
         <div class="title-bar">
             <div class="title-bar-text">Pictures - yuki.bmp</div>
@@ -351,7 +352,7 @@
         </div>
      </div>
 
-    <!-- Umbra's Easter Egg-->
+    <!-- God I love gambling -->
      <div class="window gachaGame">
         <div class="title-bar">
             <div class="title-bar-text">Windows 98 Gacha Simulator</div>
@@ -371,6 +372,33 @@
                <button id="tenPull" onclick="tenPull()">Pull x10</button>
                <button class="default" style="display: none;" id="gachaOK" onclick="showNextPull()">OK</button>
                <button id="singlePull" onclick="onePull()">Pull x1</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Discord Drama Generator -->
+
+    <div class="window discordDrama" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">Discord Drama Generator 1998</div>
+            <div class="title-bar-controls">
+                <button aria-label="Close" onclick="closeApp(this)" app="discordDrama"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="DDG-menu">
+                <span id="span1">Need to rile up a general chat cause you're bored?</span>
+                <b id="bold1">We've got you covered!</b>
+                <span id="span2">Press the button below to generate a random, usually contoversial, sentence.</span>
+                <span id="sub-head">None of this should be taken seriously, it's all jokes. Please don't actually start drama</span>
+                <span id="sentence">
+                    <span id="keyword0"></span>
+                    <span id="keyword1"></span>
+                    <span id="keyword2"></span>
+                </span>
+            </div>
+            <div class="DDG-buttons">      
+                <button class="default" id="DDG-button1">Start</button>
             </div>
         </div>
     </div>
