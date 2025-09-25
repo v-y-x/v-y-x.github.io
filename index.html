@@ -53,12 +53,16 @@
     </div>
 
     <!-- taskbar -->
-    <div class="taskbar">
+    <div class="taskbar" style="display: flex;">
         <button class="start"><img src="resources/windows-4.png" alt="">Start</button>
         <div class="notif-area">
             <div class="status-bar">
-                <div class="status-bar-field" style="width: 100%; padding: 3px;">
+                <div class="status-bar-field" id="notif-field" style="width: 100%; padding: 3px;">
                     <span style="padding: 4px;" id="clock"></span>
+                    <span><a href="https://steamcommunity.com/id/vyxthyvex" target="_blank"><img src="resources/steam_black-64x.png" alt=""></a></span>
+                    <span><a href="https://x.com/v_y_x_" target="_blank"><img src="resources/twitter.png" alt=""></a></span>
+                    <span><a href="https://bsky.app/profile/vyxthevex.bsky.social" target="_blank"><img src="resources/bluesky.png" alt=""></a></span>
+                    <span><a href="https://github.com/v-y-x" target="_blank"><img src="resources/github.png" alt=""></a></span>
                 </div>
             </div>
         </div>
@@ -154,7 +158,7 @@
                 <p>i'm vyx, an 18y/o person just surfing through the net. my most commons hobbies are programming & gaming.</p>
                 <p>i treat this website as a personal page and project of mine. it's still a very heavy WIP, but i plan on adding more things in the future.</p>
                 <p>hope you enjoy your stay!</p>
-                <p>ver 1.1.1</p>
+                <p>ver 1.1.2</p>
                 <span id="invisEgg" style="color: white; display: block; width: 500px; overflow: auto;"></span>
             </div>
             <div class="status-bar">
@@ -289,7 +293,7 @@
                     <span><img src="resources/win98 icons/soundyel-4.png" ondblclick="showError(this)" data-error="playable audio will come soon!">Doomed - Reliqa</span>
                 </div>
                 <div class="folder-dir" style="display: none;" id="projects-dir">
-                    <span><a href="https://github.com/v-y-x/v-y-x.github.io"><img src="resources/win98 icons/world-2.png" alt="">this website</a></span>
+                    <span><a href="https://github.com/v-y-x/v-y-x.github.io" target="_blank"><img src="resources/win98 icons/world-2.png" alt="">this website</a></span>
                 </div>
                 <div class="folder-dir frost-folder" style="display:none; width: 100%;" id="futty's folder-dir">
                     <img src="resources/jack_frost (1).gif" alt="">
@@ -324,7 +328,6 @@
                 <span>- audio player</span>
                 <span>- functional minesweeper</span>
                 <span>- editable address bars</span>
-                <span>- finish up icons</span>
                 <span>- more easter eggs</span>
                 <span>- working start menu</span>
                 <span>- more folders to explore</span>
