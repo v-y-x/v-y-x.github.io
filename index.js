@@ -167,56 +167,6 @@ switch (day) {
         break;
 }
 
-// discord drama generator
-const keywordList = [
-    ["Vyx ", "Anubis ", "Polar ", "Jimi ", "Acre", "Yvette ", "Hearts ", "Rosie ", "Vik ", "JJ ", "Cassie "],
-    ["is actually ", "is lowkey ", "is seriously ", "is dating ", "fucking loves ", "isn't really"],
-    ["a neilblud.", "Hitler.", "a chud.", "problematic media.", "Mussolini.", "an Israeli.", "a cuck.", "a bald retard."]
-];
-
-const generateBut = document.getElementById("DDG-button1");
-const tickSfx = new Audio("resources/START.flac");
-const dingSfx = new Audio("resources/DING.flac")
-
-let counter = 0;
-
-generateBut.addEventListener("click", generateDrama);
-
-async function genWord(i) {
-    generateBut.style.display = "none";
-    counter = 0;
-    let key = document.getElementById("keyword" + i);
-    const currentList = keywordList[i];
-
-    while (counter < 12) {
-        counter++;
-        key.innerHTML = currentList[Math.floor(Math.random() * currentList.length)];
-        tickSfx.play();
-        await delay(25 * counter);
-    }
-    if (i <= 1) {
-        dingSfx.play();
-    }
-    else {
-        tadaSfx.play();
-    }
-    await delay(1000);
-}
-
-async function generateDrama() {
-    document.getElementById("span2").style.display = "none";
-    document.getElementById("bold1").style.display = "none";
-    document.getElementById("span1").style.display = "none";
-
-    for (let i = 0; i < keywordList.length; i++) {
-        await genWord(i);
-    }
-    await delay(1000);
-    generateBut.innerHTML = "Re-generate";
-    generateBut.style.display = "block";
-}
-
-
 // tr1ke's easter egg
 let yukiPic = 1;
 const nextBut = document.getElementById("nextBut");
@@ -473,10 +423,6 @@ function easter_egg() {
             break;
         case "apir":
             message = "<video autoplay src='resources/hello.mp4'>"
-            break;
-        case "discord":
-            message = "nothingburger drama bro";
-            document.querySelector('.discordApp').style.visibility = "visible";
         }
         
         
